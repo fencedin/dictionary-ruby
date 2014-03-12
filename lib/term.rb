@@ -25,6 +25,13 @@ class Term
     @@all_terms
   end
 
+  def Term.search(input)
+    @@all_terms.each do |obj|
+      if obj.word.start_with?(input)
+        puts obj.words.join(", ") + ": " + obj.definitions.join(", ")
+      end
+    end
+  end
 end
 
 

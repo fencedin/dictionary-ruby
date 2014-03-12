@@ -35,4 +35,10 @@ describe 'Term' do
     end
   end
 
+  describe '.search' do
+    it 'should search for a word and return the word and definition' do
+      test_term = Term.create('carrot', 'a veggie')
+      Term.search('carrot').should eq [test_term]
+    end
+  end
 end

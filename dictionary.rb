@@ -107,11 +107,7 @@ end
 def search
   system 'clear'
   puts "Matches Found:"
-  Term.all.each do |obj|
-    if obj.word.start_with?(@search_word)
-      puts obj.words.join(", ") + ": " + obj.definitions.join(", ")
-    end
-  end
+  Term.search(@search_word)
   puts "\n"
   main_menu
 end
